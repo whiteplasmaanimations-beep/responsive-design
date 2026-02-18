@@ -1,5 +1,6 @@
 /* styles.css */
 
-* {
-	font-family: Arial;
+.col-8, .col-4 {
+	border: 1px solid red;
+
 }
