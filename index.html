@@ -1,59 +1,139 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My World</title>
+  <title>World Hub</title>
 
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      text-align: center;
       color: white;
-      overflow-x: hidden;
-
-      background: linear-gradient(to bottom, #87ceeb, #0b3d5c);
+      text-align: center;
+      transition: background 0.6s ease;
     }
 
-    h2 {
-      margin-top: 60px;
+    h1 {
+      margin-top: 50px;
     }
 
-    .worlds {
+    .menu {
       margin-top: 40px;
       display: flex;
       flex-direction: column;
-      gap: 20px;
       align-items: center;
+      gap: 15px;
     }
 
-    a {
-      text-decoration: none;
-      color: white;
-      background: rgba(255,255,255,0.2);
-      padding: 15px 30px;
-      border-radius: 12px;
+    button {
       width: 220px;
-      transition: 0.2s;
-      display: inline-block;
+      padding: 15px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
     }
 
-    a:hover {
-      background: rgba(255,255,255,0.4);
-      transform: scale(1.05);
+    .back {
+      margin-top: 30px;
+      background: #222;
+      color: white;
+    }
+
+    .scene {
+      display: none;
+      margin-top: 40px;
+      font-size: 24px;
+    }
+
+    .item {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 15px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 10px;
     }
   </style>
 </head>
 
 <body>
 
-  <h2>My World</h2>
+<h1 id="title">World Hub</h1>
 
-  <div class="worlds">
-    <a href="sky/">Sky</a>
-    <a href="water/">Water</a>
-    <a href="sweden/">Sweden</a>
-    <a href="marshall-islands/">Marshall Islands</a>
+<!-- MENU -->
+<div class="menu" id="menu">
+  <button onclick="openWorld('sky')">Sky</button>
+  <button onclick="openWorld('water')">Water</button>
+  <button onclick="openWorld('sweden')">Sweden</button>
+  <button onclick="openWorld('islands')">Marshall Islands</button>
+</div>
+
+<!-- SKY -->
+<div class="scene" id="sky">
+  ☁️ Sky Zone
+  <br><br>
+  <button class="back" onclick="back()">Back</button>
+</div>
+
+<!-- WATER -->
+<div class="scene" id="water">
+  🌊 Water Zone
+  <br><br>
+  <button class="back" onclick="back()">Back</button>
+</div>
+
+<!-- SWEDEN -->
+<div class="scene" id="sweden">
+  🇸🇪 Sweden Zone
+  <br><br>
+  <button class="back" onclick="back()">Back</button>
+</div>
+
+<!-- ISLANDS -->
+<div class="scene" id="islands">
+  🏝 Marshall Islands
+  <br><br>
+
+  <div>
+    <div class="item">🚤 Boat</div>
+    <div class="item">🌴 Palm Trees</div>
+    <div class="item">🏝 Heightfields</div>
   </div>
+
+  <br>
+  <button class="back" onclick="back()">Back</button>
+</div>
+
+<script>
+function openWorld(world) {
+  document.getElementById("menu").style.display = "none";
+
+  document.querySelectorAll(".scene").forEach(s => s.style.display = "none");
+
+  document.getElementById(world).style.display = "block";
+
+  if (world === "sky") {
+    document.body.style.background = "#87ceeb";
+  }
+
+  if (world === "water") {
+    document.body.style.background = "#005577";
+  }
+
+  if (world === "sweden") {
+    document.body.style.background = "#0033aa";
+  }
+
+  if (world === "islands") {
+    document.body.style.background = "#1b6b8d";
+  }
+}
+
+function back() {
+  document.getElementById("menu").style.display = "flex";
+  document.querySelectorAll(".scene").forEach(s => s.style.display = "none");
+  document.body.style.background = "#111";
+}
+</script>
 
 </body>
 </html>
