@@ -8,190 +8,95 @@
       margin: 0;
       font-family: Arial, sans-serif;
       color: white;
-      text-align: center;
-      transition: background 0.6s ease;
+      background: #111;
     }
 
     h1 {
-      margin-top: 50px;
+      text-align: center;
+      margin: 40px 0;
     }
 
-    .menu {
-      margin-top: 30px;
+    .world {
+      padding: 60px 20px;
+      border-top: 2px solid rgba(255,255,255,0.1);
+    }
+
+    .title {
+      font-size: 28px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .items {
       display: flex;
-      flex-direction: column;
+      justify-content: center;
+      flex-wrap: wrap;
       gap: 12px;
-      align-items: center;
-    }
-
-    button {
-      width: 240px;
-      padding: 14px;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      font-size: 16px;
-      background: rgba(255,255,255,0.2);
-      color: white;
-    }
-
-    button:hover {
-      background: rgba(255,255,255,0.35);
-    }
-
-    .scene {
-      display: none;
-      margin-top: 40px;
-      font-size: 22px;
     }
 
     .item {
-      display: inline-block;
-      margin: 8px;
-      padding: 10px 14px;
-      background: rgba(255,255,255,0.2);
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.15);
       border-radius: 10px;
+      font-size: 18px;
     }
 
-    .back {
-      margin-top: 25px;
-      background: #222;
-    }
+    /* Background sections */
+    #sky { background: linear-gradient(to bottom, #87ceeb, #4da6ff); }
+    #water { background: linear-gradient(to bottom, #00334d, #0099cc); }
+    #sweden { background: linear-gradient(to bottom, #0b3d91, #1a7f3c); }
+    #islands { background: linear-gradient(to bottom, #0b6b8d, #87ceeb); }
 
-    #final {
-      display: none;
-      margin-top: 50px;
-      font-size: 26px;
-    }
   </style>
 </head>
 
 <body>
 
-<h1>World Hub</h1>
-
-<div class="menu" id="menu">
-  <button onclick="openWorld('sky')">Sky</button>
-  <button onclick="openWorld('water')">Water</button>
-  <button onclick="openWorld('sweden')">Sweden</button>
-  <button onclick="openWorld('islands')">Marshall Islands</button>
-  <button onclick="checkFinal()">Final View</button>
-</div>
+<h1>🌍 World Hub (Full View)</h1>
 
 <!-- SKY -->
-<div class="scene" id="sky">
-  ☁️ SKY ZONE
-  <br><br>
-  <div>
+<div class="world" id="sky">
+  <div class="title">☁️ Sky</div>
+  <div class="items">
     <div class="item">✈️ Plane</div>
     <div class="item">☁️ Cloud</div>
     <div class="item">✈️ Plane</div>
     <div class="item">☁️ Cloud</div>
   </div>
-  <br>
-  <button class="back" onclick="back()">Back</button>
 </div>
 
 <!-- WATER -->
-<div class="scene" id="water">
-  🌊 WATER ZONE
-  <br><br>
-  <div>
+<div class="world" id="water">
+  <div class="title">🌊 Water</div>
+  <div class="items">
     <div class="item">🚤 Boat</div>
     <div class="item">🦈 Shark</div>
     <div class="item">⛽ Rig</div>
     <div class="item">🌊 Waves</div>
   </div>
-  <br>
-  <button class="back" onclick="back()">Back</button>
 </div>
 
 <!-- SWEDEN -->
-<div class="scene" id="sweden">
-  🇸🇪 SWEDEN ZONE
-  <br><br>
-  <div>
+<div class="world" id="sweden">
+  <div class="title">🇸🇪 Sweden</div>
+  <div class="items">
     <div class="item">🌲 Tree</div>
     <div class="item">🌿 Grass</div>
     <div class="item">⛽ Rig</div>
-    <div class="item">❄️ Breeze</div>
+    <div class="item">❄️ Wind</div>
   </div>
-  <br>
-  <button class="back" onclick="back()">Back</button>
 </div>
 
 <!-- ISLANDS -->
-<div class="scene" id="islands">
-  🏝 MARSHALL ISLANDS
-  <br><br>
-  <div>
+<div class="world" id="islands">
+  <div class="title">🏝 Marshall Islands</div>
+  <div class="items">
     <div class="item">🚤 Boat</div>
     <div class="item">🌴 Palm Tree</div>
     <div class="item">🏝 Heightfield</div>
     <div class="item">🌊 Shore</div>
   </div>
-  <br>
-  <button class="back" onclick="back()">Back</button>
 </div>
-
-<!-- FINAL VIEW -->
-<div id="final">
-  🌍 FULL WORLD UNLOCKED 🌍
-  <br><br>
-  All zones discovered:
-  <br><br>
-  ☁️ 🌊 🇸🇪 🏝
-  <br><br>
-  <button onclick="back()">Return</button>
-</div>
-
-<script>
-
-let visited = {
-  sky: false,
-  water: false,
-  sweden: false,
-  islands: false
-};
-
-function openWorld(world) {
-
-  document.getElementById("menu").style.display = "none";
-  document.getElementById("final").style.display = "none";
-
-  document.querySelectorAll(".scene").forEach(s => s.style.display = "none");
-
-  document.getElementById(world).style.display = "block";
-
-  visited[world] = true;
-
-  if (world === "sky") document.body.style.background = "#87ceeb";
-  if (world === "water") document.body.style.background = "#005577";
-  if (world === "sweden") document.body.style.background = "#1e4fff";
-  if (world === "islands") document.body.style.background = "#1b6b8d";
-}
-
-function back() {
-  document.getElementById("menu").style.display = "flex";
-  document.querySelectorAll(".scene").forEach(s => s.style.display = "none");
-  document.getElementById("final").style.display = "none";
-  document.body.style.background = "#111";
-}
-
-function checkFinal() {
-
-  if (visited.sky && visited.water && visited.sweden && visited.islands) {
-    document.getElementById("menu").style.display = "none";
-    document.querySelectorAll(".scene").forEach(s => s.style.display = "none");
-
-    document.getElementById("final").style.display = "block";
-    document.body.style.background = "#000";
-  } else {
-    alert("You need to visit all worlds first 🌍");
-  }
-}
-
-</script>
 
 </body>
 </html>
