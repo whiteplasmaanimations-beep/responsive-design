@@ -1,102 +1,112 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Capstone Project File</title>
+    <meta charset="UTF-8">
+    <title>Animation Resume - Midterm Practice</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      color: white;
-      background: #111;
-    }
+    <!-- Google Web Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
-    h1 {
-      text-align: center;
-      margin: 40px 0;
-    }
+    <!-- Bootstrap Framework -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    .world {
-      padding: 60px 20px;
-      border-top: 2px solid rgba(255,255,255,0.1);
-    }
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 20px;
+            background-color: #f8f9fa;
+        }
 
-    .title {
-      font-size: 28px;
-      margin-bottom: 20px;
-      text-align: center;
-    }
+        h1, h2 {
+            font-family: 'Playfair Display', serif;
+        }
 
-    .items {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
 
-    .item {
-      padding: 12px 16px;
-      background: rgba(255,255,255,0.15);
-      border-radius: 10px;
-      font-size: 18px;
-    }
-
-    /* Background sections */
-    #sky { background: linear-gradient(to bottom, #87ceeb, #4da6ff); }
-    #water { background: linear-gradient(to bottom, #00334d, #0099cc); }
-    #sweden { background: linear-gradient(to bottom, #0b3d91, #1a7f3c); }
-    #islands { background: linear-gradient(to bottom, #0b6b8d, #87ceeb); }
-
-  </style>
+        img {
+            border-radius: 10px;
+            margin-top: 10px;
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
 
-<body>
+<body class="container">
 
-<h1>Capstone Project File</h1>
+    <!-- Header -->
+    <header>
+        <h1>Animation, Lighting and Compositing</h1>
+        <h2>Brian Ye</h2>
+    </header>
 
-<!-- SKY -->
-<div class="world" id="sky">
-  <div class="title">☁️ Sky</div>
-  <div class="items">
-    <div class="item">✈️ Plane</div>
-    <div class="item">☁️ Clouds</div>
-    <div class="item">✈️ Plane 2</div>
-    <div class="item">☁️ HDR</div>
-  </div>
-</div>
+    <!-- Introduction Section -->
+    <h2>Brian Ye Resume</h2>
+    <p>
+        Im a senior at the University of Texas at Dallas and I major in film CG creation. My goal is to demonstrate an advanced understanding with animation and composition using Maya and Houdini to help me and others look deeper into the art of VFX.
+    </p>
+    
+ <h2>Education</h2>
+    <ul>
+        <li>University of Texas at Dallas (2021-2026)</li>
+        <li>Plano West Computer Science Club Tournament</li>
+     
+    </ul>
+    <!-- Topics Covered -->
+    <h2>Specialties Mastered</h2>
+    <ul>
+        <li>Animation</li>
+        <li>Rigging</li>
+        <li>Modeling</li>
+        <li>Texturing</li>
+        <li>Compositing</li>
+        <li>Editing</li>
+        <li>Matte Painting</li>
+    </ul>
 
-<!-- WATER -->
-<div class="world" id="Ocean">
-  <div class="title"> Ocean</div>
-  <div class="items">
-    <div class="item"> Life Boat</div>
-    <div class="item"> Shark Rig</div>
-    <div class="item"> Human Rig</div>
-    <div class="item"> Ocean</div>
-  </div>
-</div>
+    <!-- Employment -->
+    <h2>Employment</h2>
+    <ol>
+        <li>Spring Creek Tax Services</li>
+       
+    </ol>
+    
+    <h2>Softwares Used</h2>
+    <ul>
+        <li>Autodesk Maya</li>
+        <li>Adobe Substance Painter, Premiere, and PS</li>
+        <li>Speedtree</li>
+        <li>Nuke</li>
+        <li>Houdini</li>
+        <li>Blender</li>
+        <li>Vray, Redshift, Arnold Render Engines</li>
+    </ul>
 
-<!-- SWEDEN -->
-<div class="world" id="sweden">
-  <div class="title">🇸🇪 Sweden north of Kungalv/Gothenburg</div>
-  <div class="items">
-    <div class="item"> Speed Tree Model</div>
-    <div class="item"> Grass Paint Effects</div>
-    <div class="item"> Rig</div>
-    <div class="item"> Wind</div>
-  </div>
-</div>
+    <!-- Useful Links -->
+    <h2>Business Email</h2>
+    <p>
+        Message the 
+        <a href="mailto:Whiteplasmaanimations@gmail.com">
+            Work Email
+        </a>
+        to learn more about the framework and pipeline for CG and Marketing.
+    </p>
 
-<!-- ISLANDS -->
-<div class="world" id="islands">
-  <div class="title"> Marshall Islands</div>
-  <div class="items">
-    <div class="item"> Boat Vray Asset</div>
-    <div class="item"> Palm SpeedTree Asset</div>
-    <div class="item"> Heightfields for Mountains</div>
-    <div class="item"> Water Displacement Shore</div>
-  </div>
-</div>
+    <!-- University Image -->
+    <h2>University </h2>
+    <img src="assets/campus-mall-drone-shot-spring-2023-f9da6375e486abef.jpg" alt="UTD University Logo">
+
+    <!-- Work Bonus -->
+    <h2>CG Work Demo</h2>
+    <img src="assets/Water.png" alt="CG Water Simulation">
 
 </body>
 </html>
+
